@@ -8,7 +8,7 @@ describe("File Upload API", () => {
   it("uploads a CSV file successfully", async () => {
     const res = await request(app)
       .post("/upload")
-      .attach("file", "tests/testfiles/test.csv"); // Path to your test CSV file
+      .attach("file", "tests/testfiles/data.csv"); // Path to your test CSV file
 
     expect(res.status).toBe(200);
     expect(res.body.message).toBe("File uploaded successfully");

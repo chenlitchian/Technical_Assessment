@@ -5,8 +5,10 @@ const fs = require("fs");
 const csvParser = require("csv-parser");
 const { upload } = require("./services/uploadService");
 const { filterData } = require("./services/filterService");
+const cors = require('cors');
 
 const PORT = process.env.PORT || 4000;
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Hello, Express!");
@@ -33,7 +35,7 @@ app.post("/upload", (req, res) => {
 
 // Endpoint to read CSV file with pagination and search
 app.get("/data", (req, res) => {
-  const { search, page, limit } = req.query;
+  const { search, page, limit=10 } = req.query;
   const filePath = "uploads/data.csv";
   const data = [];
   let totalCount = 0;
