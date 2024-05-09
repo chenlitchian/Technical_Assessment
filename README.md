@@ -37,3 +37,18 @@ To start frontend, run:
 ```bash
     npm run client
 ```
+
+
+To run backend tests, run:
+
+```bash
+    npm run test-server
+```
+
+
+
+To run frontend tests, run:
+
+```bash
+    npm run test-client
+```

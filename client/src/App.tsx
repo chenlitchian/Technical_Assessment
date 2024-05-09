@@ -5,7 +5,7 @@ import UploadCSV from './UploadCSV';
 function App() {
   return (
     <div className="App">
-      <UploadCSV />
+      {/* <UploadCSV /> */}
     </div>
   );
 }

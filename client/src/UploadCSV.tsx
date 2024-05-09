@@ -105,7 +105,7 @@ const UploadCSV: React.FC = () => {
 
   const handleSearchKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      fetchData(searchText, 1,);
+      fetchData(searchText, 1);
     }
   };
 
@@ -119,10 +119,11 @@ const UploadCSV: React.FC = () => {
       <div className="flex items-center m-4 ">
         <div className="flex-1">
           <form onSubmit={handleSubmit} className="flex">
-            <input type="file" onChange={handleFileChange} className="mr-2" />
+            <input type="file" data-testid="upload-csv-file" onChange={handleFileChange} className="mr-2" />
             <button
               type="submit"
               className="bg-blue-500 text-white px-4 py-2 rounded"
+              data-testid="upload-button"
             >
               Upload
             </button>
@@ -138,6 +139,7 @@ const UploadCSV: React.FC = () => {
             onKeyDown={handleSearchKeyDown}
             placeholder="Search..."
             className="border border-gray-300 px-4 py-2 rounded mr-2"
+            data-testid="search-input"
           />
         </div>
       </div>

@@ -21,11 +21,13 @@ const CSVDataTable: React.FC<CSVDataTableProps> = ({
   nextPage,
   goToPage,
 }) => {
-  console.log(data);
 
+  // if no data is available
   if (data.length === 0) {
     return <p>No data available.</p>;
   }
+
+  // get list of pages. previous 5 page and next 5 page
   const pageNumbers = [];
   for (
     let i = Math.max(1, currentPage - 5);
@@ -67,6 +69,7 @@ const CSVDataTable: React.FC<CSVDataTableProps> = ({
           onClick={prevPage}
           disabled={currentPage === 1}
           className="bg-blue-500 text-white px-4 py-2 rounded mr-2"
+          data-testid='prev-page-button'
         >
           Previous
         </button>
@@ -79,7 +82,9 @@ const CSVDataTable: React.FC<CSVDataTableProps> = ({
               currentPage === pageNumber
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-blue-500 hover:text-white"
-            }`}
+            }`
+          }
+          data-testid={`page-button-${pageNumber}`} 
           >
             {pageNumber}
           </button>
@@ -88,6 +93,7 @@ const CSVDataTable: React.FC<CSVDataTableProps> = ({
           onClick={nextPage}
           disabled={currentPage === totalPages}
           className="bg-blue-500 text-white px-4 py-2 rounded ml-2"
+          data-testid='next-page-button'
         >
           Next
         </button>
