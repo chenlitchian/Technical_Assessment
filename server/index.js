@@ -58,12 +58,12 @@ app.get("/data", (req, res) => {
       // Calculate total count for pagination
       totalCount = filteredData.length;
 
-            // if (totalCount == 0) {
-      //   res.status(404).json({
-      //     message: "No result found.",
-      //   });
-      //   return;
-      // }
+            if (totalCount == 0) {
+        res.status(404).json({
+          message: "No result found.",
+        });
+        return;
+      }
 
       res.json({
         data: paginatedData,
