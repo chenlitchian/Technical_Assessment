@@ -49,7 +49,7 @@ describe("UploadCSV Component", () => {
 
 
     const { getByText, getByPlaceholderText, getByLabelText } = render(
-      <UploadCSV {...mockProps} />
+      <UploadCSV />
     );
 
     // Check if "Upload CSV" text is present
