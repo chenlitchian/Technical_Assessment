@@ -79,8 +79,8 @@ describe("UploadCSV Component", () => {
       },
     };
 
-    axios.get.mockResolvedValueOnce(mockResponse); // Mock axios get method to return mockResponse
-
+    //axios.get.mockResolvedValueOnce(mockResponse); // Mock axios get method to return mockResponse
+    axios.get = jest.fn().mockResolvedValue(mockResponse);
     const { getByText, getByLabelText } = render(<UploadCSV />); // Render your component
 
     const searchInput = screen.getByTestId("search-input"); // Get search input field
