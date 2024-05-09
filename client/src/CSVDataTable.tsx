@@ -50,7 +50,7 @@ const CSVDataTable: React.FC<CSVDataTableProps> = ({
             </tr>
           </thead>
           <tbody>
-            {data.map((row: any, index) => (
+            {data.map((row: any, index: number) => (
               <tr
                 key={index}
                 className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}
