@@ -98,7 +98,7 @@ const CSVDataTable: React.FC<CSVDataTableProps> = ({
           Next
         </button>
 
-        <b  className="m-4" > {currentPage*10 - 10} - {currentPage*10 - 10 + data.length} of {totalCount} </b>
+        <b  className="m-4" > {currentPage*10 - 10 + 1} - {currentPage*10 - 10 + data.length} of {totalCount} </b>
         {dataLoading && <p className="mt-2">data is loading...</p>}
       </div>
     </div>
