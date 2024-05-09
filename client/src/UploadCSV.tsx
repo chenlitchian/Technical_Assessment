@@ -19,21 +19,22 @@ const UploadCSV: React.FC = () => {
   const nextPage = () => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
-      fetchData("", currentPage + 1);
+      fetchData(searchText, currentPage + 1);
     }
   };
 
   const prevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
-      fetchData("", currentPage - 1);
+      fetchData(searchText, currentPage - 1);
     }
   };
 
   const goToPage = (page: number) => {
     setCurrentPage(page);
-    fetchData("", page);
+    fetchData(searchText, page);
   };
+
 
   const fetchData = async (search: string, page: number) => {
     try {
