@@ -1,7 +1,7 @@
 import React from "react";
 
 interface CSVDataTableProps {
-  data: string[][];
+  data:any;
   currentPage: number;
   totalPages: number;
   totalCount: number;
